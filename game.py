@@ -89,32 +89,6 @@ def collision_sprite():
     else:
         return True
 
-# def obstacle_move(obstacle_list):
-#     if obstacle_list:
-#         for obstacle_rect in obstacle_list:
-#             obstacle_rect.x -= 5
-#             if obstacle_rect.bottom == 300: screen.blit(snail_surf,obstacle_rect)
-#             else: screen.blit(fly_surf,obstacle_rect)
-#         obstacle_list = [obstacle for obstacle in obstacle_list if obstacle.x > -100]
-#         return obstacle_list
-#     else: return []
-
-# def collision(player,obstacles):
-#     if obstacles:
-#         for obstacle_rect in obstacles:
-#             if player.colliderect(obstacle_rect): return False
-#     return True
-
-# def player_anim():
-#     global player_surf, player_index
-
-#     if player_rect.bottom < 300: # jump
-#         player_surf = player_jump
-#     else: # walk
-#         player_index += 0.1
-#         if player_index >= len(player_walk): player_index =0
-#         player_surf = player_walk[int(player_index)]
-
 pygame.init()
 screen = pygame.display.set_mode((800,400))
 pygame.display.set_caption('Learning PyGame')
@@ -125,7 +99,7 @@ start_time = 0
 score = 0
 bgm = pygame.mixer.Sound('audio/music.wav')
 bgm.set_volume(0.01)
-bgm.play()
+bgm.play(loops = -1)
 
 #Groups
 player = pygame.sprite.GroupSingle()
